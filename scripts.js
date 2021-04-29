@@ -18,13 +18,13 @@ function flipCard() {
 
   secondCard = this;
   hasFlippedCard = false;
- 
+
   checkForMatch();
 
 }
 
 function checkForMatch() {
-  let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
   isMatch ? disableCards() : unflipCards();
 }
 
