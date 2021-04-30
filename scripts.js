@@ -17,10 +17,8 @@ function flipCard() {
   }
 
   secondCard = this;
-  hasFlippedCard = false;
 
   checkForMatch();
-
 }
 
 function checkForMatch() {
@@ -50,5 +48,14 @@ function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
 }
+
+// IIFE (Immediately Invoked Function Expression) 
+// - will be invoked right after initializing
+(function shuffle() {
+  cards.forEach(card => {
+    let ramdomPos = Math.floor(Math.random() * 12);
+    card.style.order = ramdomPos;
+  });
+})();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
